@@ -1,9 +1,21 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
-
+  useGSAP(() => {
+    gsap.to("#blue-box", {
+      x: 250,
+      y: 250,
+      duration: 2,
+      ease: "elastic",
+      //repeat: -1,
+      //yoyo: true,
+      rotate: 360,
+    });
+  }, []); // The empty array as the second argument makes this effect run only once
   return (
     <main>
-      <h1>GsapTo</h1>
+      <h1 id="title">GsapTo</h1>
 
       <p className="mt-5 text-gray-500">
         The <code>gsap.to()</code> method is used to animate elements from their
